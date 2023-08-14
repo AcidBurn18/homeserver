@@ -7,7 +7,7 @@ services:
       - "13378:80"
     restart: unless-stopped
     volumes:
-      - /mnt/raid1/audibookshelf/config:/config
-      - /mnt/raid1/audibookshelf/metadata:/metadata
-      - /mnt/raid1/audibookshelf/audiobooks:/audiobooks
-      - /mnt/raid1/audibookshelf/podcasts:/podcasts
+      - /yourpath/audibookshelf/config:/config
+      - /yourpath/audibookshelf/metadata:/metadata
+      - /yourpath/audibookshelf/audiobooks:/audiobooks
+      - /yourpath/audibookshelf/podcasts:/podcasts
