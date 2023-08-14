@@ -12,6 +12,6 @@ services:
       - "6881:6881"
       - "6881:6881/udp"
     volumes:
-      - /mnt/raid1/qbittorrent/appdata/config:/config
-      - /mnt/raid1/qbittorrent/downloads:/downloads
+      - /yourpath/qbittorrent/appdata/config:/config
+      - /yourpath/qbittorrent/downloads:/downloads
     restart: unless-stopped
