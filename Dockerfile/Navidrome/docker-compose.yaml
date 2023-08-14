@@ -1,0 +1,15 @@
+version: '3'
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - ND_LOGLEVEL=info
+    volumes:
+      - /yourpath/nextcloud/data/admin/files/Musics:/music     ### I used Nextcloud Music Path as host, easy upload of new files
+      - /yourpath/navidrome/data:/data
+    ports:
+      - "4533:4533"
