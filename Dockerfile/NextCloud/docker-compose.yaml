@@ -9,9 +9,9 @@ services:
     ports:
       - "9000:80"
     volumes:
-      - /mnt/raid1/nextcloud/html:/var/www/html
-      - /mnt/raid1/nextcloud/apps:/var/www/html/custom_apps
-      - /mnt/raid1/nextcloud/config:/var/www/html/config
-      - /mnt/raid1/nextcloud/data:/var/www/html/data
-      - /mnt/raid1/nextcloud/theme:/var/www/html/themes
+      - /yourpath//nextcloud/html:/var/www/html
+      - /yourpath//nextcloud/apps:/var/www/html/custom_apps
+      - /yourpath//nextcloud/config:/var/www/html/config
+      - /yourpath//nextcloud/data:/var/www/html/data
+      - /yourpath//nextcloud/theme:/var/www/html/themes
     restart: unless-stopped
