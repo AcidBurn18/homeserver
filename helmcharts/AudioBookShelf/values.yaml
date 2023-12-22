@@ -1,0 +1,13 @@
+# Define configurable values here
+image:
+  repository: ghcr.io/advplyr/audiobookshelf
+  tag: latest
+
+service:
+  port: 80
+
+volumes:
+  config: \D:\HomeServer\audibookshelf/config
+  metadata: \D:\HomeServer\ audibookshelf\metadata
+  audiobooks:  \D:\HomeServer\audibookshelf\audiobooks
+  podcasts:  \D:\HomeServer\audibookshelf\podcasts

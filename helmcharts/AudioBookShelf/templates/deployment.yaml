@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-audiobookshelf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-audiobookshelf
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-audiobookshelf
+    spec:
+      containers:
+        - name: audiobookshelf
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: {{ .Values.volumes.config }}
+            - name: metadata-volume
+              mountPath: {{ .Values.volumes.metadata }}
+            - name: audiobooks-volume
+              mountPath: {{ .Values.volumes.audiobooks }}
+            - name: podcasts-volume
+              mountPath: {{ .Values.volumes.podcasts }}
+      volumes:
+        - name: config-volume
+          hostPath:
+            path: {{ .Values.volumes.config }}
+        - name: metadata-volume
+          hostPath:
+            path: {{ .Values.volumes.metadata }}
+        - name: audiobooks-volume
+          hostPath:
+            path: {{ .Values.volumes.audiobooks }}
+        - name: podcasts-volume
+          hostPath:
+            path: {{ .Values.volumes.podcasts }}
